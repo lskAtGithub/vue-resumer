@@ -4,9 +4,8 @@
     </div>
 </template>
 
-<style>
+<style lsng="scss">
     #preview{
-        border: 1px solid red;
         min-height: 200px;
     }
 </style>
