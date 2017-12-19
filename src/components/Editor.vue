@@ -2,40 +2,24 @@
     <div id="editor">
         <nav>
             <ol>
-                <li v-bind:class="{active: currentTab === 0}" v-on:click="currentTab = 0">
+                <li v-for="i in [0,1,2,3,4,5]"
+                    v-bind:class="{active: currentTab === i}"
+                    v-on:click="currentTab = i">
                     <svg class="icon">
-                        <use xlink:href="#icon-shenfenzheng"></use>
-                    </svg>
+                        <use v-bind:xlink:href="`#icon-${icons[i]}`"></use>
+                    </svg>                    
                 </li>
-                <li v-bind:class="{active: currentTab === 1}" v-on:click="currentTab = 1">
-                    <svg class="icon">
-                        <use xlink:href="#icon-book1"></use>
-                    </svg>
-                </li>
-                <li v-bind:class="{active: currentTab === 2}" v-on:click="currentTab = 2">
-                    <svg class="icon">
-                        <use xlink:href="#icon-jiangbei1"></use>
-                    </svg>
-                </li>
-                <li v-bind:class="{active: currentTab === 3}" v-on:click="currentTab = 3">
-                    <svg class="icon">
-                        <use xlink:href="#icon-gongzuoxinxi"></use>
-                    </svg>
-                </li>
-                <li v-bind:class="{active: currentTab === 4}" v-on:click="currentTab = 4">
-                    <svg class="icon">
-                        <use xlink:href="#icon-xiangmu1"></use>
-                    </svg>
-                </li>
-                <li v-bind:class="{active: currentTab === 5}" v-on:click="currentTab = 5">
-                    <svg class="icon">
-                        <use xlink:href="#icon-phone1"></use>
-                    </svg>
-                </li>
+
+
             </ol>
         </nav>
         <ol class="panes">
-
+            <li v-bind:class="{active: currentTab === 0}">tab 1 </li>
+            <li v-bind:class="{active: currentTab === 1}">tab 2 </li>
+            <li v-bind:class="{active: currentTab === 2}">tab 3 </li>
+            <li v-bind:class="{active: currentTab === 3}">tab 4 </li>
+            <li v-bind:class="{active: currentTab === 4}">tab 5 </li>
+            <li v-bind:class="{active: currentTab === 5}">tab 6 </li>
         </ol>
     </div>
 </template>
@@ -44,7 +28,8 @@
     export default {
         data(){
             return {
-                currentTab: 0
+                currentTab: 0,
+                icons: ['shenfenzheng','book1','jiangbei1','gongzuoxinxi','xiangmu1','phone1']
             }
         }
     }
@@ -74,6 +59,16 @@
                     > .icon{
                         fill: black;
                     }
+                }
+            }
+        }
+
+        > .panes {
+            > li{
+                display: none;
+
+                &.active{
+                    display: block;
                 }
             }
         }
