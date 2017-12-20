@@ -8,7 +8,7 @@
             <el-form-item label="所在城市">
                 <el-input v-model="profile.city"></el-input>
             </el-form-item>
-            <el-form-item label="年龄">
+            <el-form-item label="出生年月">
                 <el-input v-model="profile.age"></el-input>
             </el-form-item>
         </el-form>

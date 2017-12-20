@@ -15,22 +15,22 @@
         </nav>
         <ol class="panes">
             <li v-bind:class="{active: currentTab === 0}">
-                <Info v-bind:profile="profile" />
+                <Info v-bind:profile="resume.profile" />
             </li>
             <li v-bind:class="{active: currentTab === 1}">
-                <Study v-bind:study="study" />
+                <Study v-bind:study="resume.study" />
             </li>
             <li v-bind:class="{active: currentTab === 2}">
-                <Winning v-bind:winning="winning" />
+                <Winning v-bind:winning="resume.winning" />
             </li>
             <li v-bind:class="{active: currentTab === 3}">
-                <Work v-bind:work="work" />
+                <Work v-bind:work="resume.work" />
             </li>
             <li v-bind:class="{active: currentTab === 4}">
-                <Project v-bind:project="project" />
+                <Project v-bind:project="resume.project" />
             </li>
             <li v-bind:class="{active: currentTab === 5}">
-                <Contact v-bind:contact="contact" />
+                <Contact v-bind:contact="resume.contact" />
             </li>
         </ol>
     </div>
@@ -46,28 +46,12 @@
 
     export default {
         components:{ Info,Work,Study,Contact,Winning,Project },
+        props: ['resume'],
         data(){
             return {
                 currentTab: 0,
                 icons: ['shenfenzheng','book1','jiangbei1','gongzuoxinxi','xiangmu1','phone1'],
-                profile:{
-                    name:'', city:'', age:''
-                },
-                work: [
-                    { company:'',content:'' }
-                ],
-                study:[
-                    { school:'', duration:'', degree:'' }
-                ],
-                contact:{
-                    phone:'', email:'', VX:'', QQ:''
-                },
-                winning:[
-                    { getWin:'', describe:'' }
-                ],
-                project:[
-                    { name:'', duration:'', degree:'', preview:'', summary:'' }
-                ]
+                
             }
         },
         methods:{

@@ -6,14 +6,8 @@
                 <el-form-item label="项目名">
                     <el-input v-model="item.name"></el-input>
                 </el-form-item>
-                <el-form-item label="时间段">
-                    <el-input v-model="item.duration"></el-input>
-                </el-form-item>
                 <el-form-item label="项目描述">
                     <el-input v-model="item.degree"></el-input>
-                </el-form-item>
-                <el-form-item label="项目预览链接">
-                    <el-input v-model="item.preview"></el-input>
                 </el-form-item>
                 <el-form-item label="项目总结">
                     <el-input v-model="item.summary"></el-input>
@@ -31,7 +25,7 @@
         methods:{
             addItem(){
                 this.project.push({
-                    name:'', duration:'', degree:'',preview:'',summary:''
+                    name:'', degree:'',preview:'',summary:''
                 })
             },
             removeItem(index){
