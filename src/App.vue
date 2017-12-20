@@ -69,7 +69,7 @@ html, body, #app{
   box-shadow: 0 0 3px hsla(0,0,0,0.5);
 }
 #app main{
-  display: flex;
+  display: flex !important;
   flex: 1;
   background: #ddd;
 
