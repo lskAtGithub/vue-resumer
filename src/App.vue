@@ -68,7 +68,7 @@ html, body, #app{
   z-index: 1;
   box-shadow: 0 0 3px hsla(0,0,0,0.5);
 }
-#app main{
+main{
   display: flex !important;
   flex: 1;
   background: #ddd;
